@@ -1,0 +1,16 @@
+﻿<Window x:Class="kNN.DatingClassifierTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kNN"
+        mc:Ignorable="d"
+        Title="DatingClassifierTest" Height="300" Width="300">
+    <Window.DataContext>
+        <local:DatingClassifierTestModel/>
+    </Window.DataContext>
+    <Grid>
+        <TextBlock Margin="10" Text="Dating classifier test results:" Foreground="Blue" />
+        <TextBlock Margin="10,30,10,10" Name="ObjectAProperty" Text="{Binding ResultMessage}" />
+    </Grid>
+</Window>
