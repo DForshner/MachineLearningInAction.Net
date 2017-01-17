@@ -47,7 +47,8 @@ namespace kNN
 
             var model = new PlotModel
             {
-                Title = "Liters of Ice Cream vs. Video Game Time Scatter Plot",
+                //Title = "Liters of Ice Cream vs. Video Game Time Scatter Plot",
+                Title = "Frequent Flyer Miles vs. Video Game Time Scatter Plot",
                 LegendBackground = OxyColor.FromAColor(200, OxyColors.White),
                 LegendBorder = OxyColors.Black,
                 LegendPlacement = LegendPlacement.Inside,
@@ -57,8 +58,11 @@ namespace kNN
             model.Series.Add(largeDoses);
             model.Series.Add(smallDoses);
             model.Series.Add(didntLike);
-            model.Axes.Add(new LinearAxis { Key = "X", Position = AxisPosition.Bottom, Title = "Percentage of Time Spent Playing VIdeo Games" });
-            model.Axes.Add(new LinearAxis { Key = "Y", Position = AxisPosition.Left, Title = "Liters of Ice Cream Consumed Per Week" });
+            //model.Axes.Add(new LinearAxis { Key = "X", Position = AxisPosition.Bottom, Title = "Percentage of Time Spent Playing Video Games" });
+            model.Axes.Add(new LinearAxis { Key = "X", Position = AxisPosition.Bottom, Title = "Frequent Flyer Miles Earned Per Year" });
+
+            //model.Axes.Add(new LinearAxis { Key = "Y", Position = AxisPosition.Left, Title = "Liters of Ice Cream Consumed Per Week" });
+            model.Axes.Add(new LinearAxis { Key = "Y", Position = AxisPosition.Left, Title = "Percentage of Time Spent Playing Video Games" });
 
             MyModel = model;
         }
