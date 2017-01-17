@@ -8,7 +8,7 @@ The original Python source can be found at https://github.com/pbharrin/machinele
 
 I really recommend buying his book if you are interested in machine learning but find the academic math first approach isn't working for you.  It takes a lot of the "magic" out of machine learning and leaves you with fairly straightforward code.   
 
-I'm hoping to stay somewhat close to the original python code but MathNet.Numerics quite the same as numpy and OxyPlot + WPF requires more boilerplate than pyplot.
+I'm hoping to stay somewhat close to the original python code but MathNet.Numerics is not quite the same as NumPy and OxyPlot + WPF requires more framework boilerplate than Pyplot.
 
 # Running the code
 
