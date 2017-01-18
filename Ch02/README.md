@@ -1,4 +1,4 @@
-# Chapter 2
+# Chapter 2 - Classifying with k-Nearest Neighbors
 
 ## Special Instructions 
 
