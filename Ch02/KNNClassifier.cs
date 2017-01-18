@@ -7,17 +7,6 @@ namespace kNN
 {
     public static class KNNClassifier
     {
-        private static Matrix<double> CreateGroup()
-        {
-            double[,] x = {{ 1.0, 1.1 }, { 1.0, 1.0 }, { 0, 0 }, { 0, 0.1 } };
-            return Matrix<double>.Build.DenseOfArray(x);
-        }
-
-        private static IList<string> CreateLabels()
-        {
-            return new[] { "A", "A", "B", "B" };
-        }
-
         /// <summary>
         /// Classify an input vector against a labeled dataset using kNN.
         /// </summary>
@@ -26,7 +15,7 @@ namespace kNN
         /// <param name="labels">vector of labels</param>
         /// <param name="k">the number of nearest neighbors to use in the voting</param>
         /// <returns>The classification label of the input vector</returns>
-        private static string Classify(Vector<double> inX, Matrix<double> dataSet, IList<string> labels, int k)
+        public static string Classify(Vector<double> inX, Matrix<double> dataSet, IList<string> labels, int k)
         {
             Vector<double> distances = GetEuclidianDistance(inX, dataSet);
             IDictionary<string, int> freqByClassLabel = CountClassFrequency(labels, k, distances);
@@ -63,13 +52,13 @@ namespace kNN
             return classCount;
         }
 
-        internal static double GetErrorRate()
+        public static double GetErrorRate()
         {
             double hoRatio = 0.10;
 
-            Tuple<Matrix<double>, List<string>> exampleTwo = FileLoader.Load();
-            var group = exampleTwo.Item1;
-            var labels = exampleTwo.Item2;
+            Tuple<Matrix<double>, List<string>> fromFile = File2Matrix.Load();
+            var group = fromFile.Item1;
+            var labels = fromFile.Item2;
 
             var normalizedDataSet = MatrixHelpers.Normalize(group);
             var numTestVectors = (int)((double)group.RowCount * hoRatio);
@@ -85,15 +74,6 @@ namespace kNN
             }
 
             return errorCount / (double)numTestVectors;
-        }
-
-        public static void Classify()
-        {
-            var inX = Vector<double>.Build.Dense(new[] { 0.9, 0.9 });
-            var group = CreateGroup();
-            var labels = CreateLabels();
-
-            Classify(inX, group, labels, 3);
         }
     }
 }

@@ -5,7 +5,7 @@ using MathNet.Numerics.LinearAlgebra;
 
 namespace kNN
 {
-    static class FileLoader
+    public static class File2Matrix
     {
         const int FREQ_FLYER = 0;
         const int PERCENT_VID_GAME = 1;
@@ -30,7 +30,6 @@ namespace kNN
             }
 
             var m = Matrix<double>.Build.DenseOfRowArrays(features);
-
             return Tuple.Create(m, labels);
         }
     }

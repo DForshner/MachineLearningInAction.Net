@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using kNN.Views;
 
 namespace kNN
 {
@@ -15,11 +16,11 @@ namespace kNN
     {
         void App_Startup(object sender, StartupEventArgs e)
         {
-            var scatterPlot = new ScatterPlot();
+            var scatterPlot = new PercentVideoGameVsIceCreamPerYearScatterPlot();
             scatterPlot.Show();
 
-            var classifierTest = new DatingClassifierTest();
-            classifierTest.Show();
+            var scatterPlot2 = new FreqFlyerVsPercentVideoGameScatterPlot();
+            scatterPlot2.Show();
         }
     }
 }

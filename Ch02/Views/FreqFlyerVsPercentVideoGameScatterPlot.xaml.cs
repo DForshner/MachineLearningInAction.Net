@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace kNN
+namespace kNN.Views
 {
     /// <summary>
-    /// Interaction logic for ScatterPlot.xaml
+    /// Interaction logic for FreqFlyerVsPercentVideoGameScatterPlot.xaml
     /// </summary>
-    public partial class ScatterPlot : Window
+    public partial class FreqFlyerVsPercentVideoGameScatterPlot : Window
     {
-        public ScatterPlot()
+        public FreqFlyerVsPercentVideoGameScatterPlot()
         {
             InitializeComponent();
         }

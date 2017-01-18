@@ -1,14 +1,17 @@
-﻿<Window x:Class="kNN.ScatterPlot"
+﻿<Window x:Class="kNN.Views.FreqFlyerVsPercentVideoGameScatterPlot"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:oxy="http://oxyplot.org/wpf"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:oxy="http://oxyplot.org/wpf"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:kNN"
+        xmlns:VM="clr-namespace:kNN.ViewModels"
+        xmlns:local="clr-namespace:kNN.Views"
         mc:Ignorable="d"
-        Title="ScatterPlot" Height="350" Width="525">
+        Title="FreqFlyerVsPercentVideoGameScatterPlot"
+        Height="600"
+        Width="600">
     <Window.DataContext>
-        <local:ScatterPlotModel/>
+        <VM:FreqFlyerVsPercentVideoGameScatterPlotModel/>
     </Window.DataContext>
     <Grid>
         <oxy:PlotView Model="{Binding MyModel}"/>

@@ -5,17 +5,17 @@ using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
 
-namespace kNN
+namespace kNN.ViewModels
 {
-    class ScatterPlotModel
+    public class PercentVideoGameVsIceCreamPerYearScatterPlotModel
     {
         const int FREQ_FLYER = 0;
         const int PERCENT_VID_GAME = 1;
         const int LITER_ICE_CREAM = 2;
 
-        public ScatterPlotModel()
+        public PercentVideoGameVsIceCreamPerYearScatterPlotModel()
         {
-            Tuple<Matrix<double>, List<string>> exampleTwo = FileLoader.Load();
+            Tuple<Matrix<double>, List<string>> exampleTwo = File2Matrix.Load();
 
             var largeDoses = new ScatterSeries { MarkerType = MarkerType.Circle, Title = "Liked in Large Doses" };
             var smallDoses = new ScatterSeries { MarkerType = MarkerType.Square, Title = "Liked in Small Doses" };
@@ -29,16 +29,13 @@ namespace kNN
                 switch(label)
                 {
                     case "largeDoses":
-                        //largeDoses.Points.Add(new ScatterPoint(point[PERCENT_VID_GAME], point[LITER_ICE_CREAM]));
-                        largeDoses.Points.Add(new ScatterPoint(point[FREQ_FLYER], point[PERCENT_VID_GAME]));
+                        largeDoses.Points.Add(new ScatterPoint(point[PERCENT_VID_GAME], point[LITER_ICE_CREAM]));
                         break;
                     case "smallDoses":
-                        //smallDoses.Points.Add(new ScatterPoint(point[PERCENT_VID_GAME], point[LITER_ICE_CREAM]));
-                        smallDoses.Points.Add(new ScatterPoint(point[FREQ_FLYER], point[PERCENT_VID_GAME]));
+                        smallDoses.Points.Add(new ScatterPoint(point[PERCENT_VID_GAME], point[LITER_ICE_CREAM]));
                         break;
                     case "didntLike":
-                        //didntLike.Points.Add(new ScatterPoint(point[PERCENT_VID_GAME], point[LITER_ICE_CREAM]));
-                        didntLike.Points.Add(new ScatterPoint(point[FREQ_FLYER], point[PERCENT_VID_GAME]));
+                        didntLike.Points.Add(new ScatterPoint(point[PERCENT_VID_GAME], point[LITER_ICE_CREAM]));
                         break;
                     default:
                         throw new ArgumentOutOfRangeException("Unknown classification label [" + label + "] encountered.");
@@ -47,8 +44,7 @@ namespace kNN
 
             var model = new PlotModel
             {
-                //Title = "Liters of Ice Cream vs. Video Game Time Scatter Plot",
-                Title = "Frequent Flyer Miles vs. Video Game Time Scatter Plot",
+                Title = "Liters of Ice Cream vs. Video Game Time Scatter Plot",
                 LegendBackground = OxyColor.FromAColor(200, OxyColors.White),
                 LegendBorder = OxyColors.Black,
                 LegendPlacement = LegendPlacement.Inside,
@@ -58,11 +54,8 @@ namespace kNN
             model.Series.Add(largeDoses);
             model.Series.Add(smallDoses);
             model.Series.Add(didntLike);
-            //model.Axes.Add(new LinearAxis { Key = "X", Position = AxisPosition.Bottom, Title = "Percentage of Time Spent Playing Video Games" });
-            model.Axes.Add(new LinearAxis { Key = "X", Position = AxisPosition.Bottom, Title = "Frequent Flyer Miles Earned Per Year" });
-
-            //model.Axes.Add(new LinearAxis { Key = "Y", Position = AxisPosition.Left, Title = "Liters of Ice Cream Consumed Per Week" });
-            model.Axes.Add(new LinearAxis { Key = "Y", Position = AxisPosition.Left, Title = "Percentage of Time Spent Playing Video Games" });
+            model.Axes.Add(new LinearAxis { Key = "X", Position = AxisPosition.Bottom, Title = "Percentage of Time Spent Playing Video Games" });
+            model.Axes.Add(new LinearAxis { Key = "Y", Position = AxisPosition.Left, Title = "Liters of Ice Cream Consumed Per Week" });
 
             MyModel = model;
         }

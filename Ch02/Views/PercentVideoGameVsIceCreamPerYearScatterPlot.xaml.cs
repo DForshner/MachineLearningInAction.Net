@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace kNN
+namespace kNN.Views
 {
     /// <summary>
-    /// Interaction logic for DatingClassifierTest.xaml
+    /// Interaction logic for PercentVideoGameVsIceCreamPerYear.xaml
     /// </summary>
-    public partial class DatingClassifierTest : Window
+    public partial class PercentVideoGameVsIceCreamPerYearScatterPlot : Window
     {
-        public DatingClassifierTest()
+        public PercentVideoGameVsIceCreamPerYearScatterPlot()
         {
             InitializeComponent();
         }
